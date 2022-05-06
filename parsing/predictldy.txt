@@ -329,6 +329,19 @@ const#STR -> STR
 num_const#INT10 -> INT10
 num_const#INT8 -> INT8
 num_const#INT16 -> INT16
+#, -> isnull_expr isnull_es
+es#) -> isnull_expr isnull_es
+isnull_es#, -> , isnull_expr isnull_es
+isnull_es#) -> $
+const#INT10 -> num_const
+const#INT8 -> num_const
+const#INT16 -> num_const
+const#FLOAT -> FLOAT
+const#CHAR -> CHAR
+const#STR -> STR
+num_const#INT10 -> INT10
+num_const#INT8 -> INT8
+num_const#INT16 -> INT16
 p#= -> =
 equal_op#+= -> +=
 equal_op#-= -> -=
